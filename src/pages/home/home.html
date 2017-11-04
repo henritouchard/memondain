@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Memondain</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(false, '')" (throwoutright)="voteUp(false, '')" id="card-stack">
+    <ion-card #mycards1 swing-card *ngFor="let c of cards | slice:min:max">
+        <div *ngIf="cards.length > 0; else end">
+          <div *ngIf="cards.length > 1; else loader">
+          <ion-item *ngIf="c.picture">
+            <p><img  *ngIf="c.picture"[src]="c.picture.data.url"></p>
+          </ion-item>
+          <ion-grid class="buttonContainer">
+            <ion-row>
+                <ion-col col-6  *ngFor="let f of random_friends">
+                  <button ion-button class="buttonName" color="primary" (click)="voteUp(true, f)">
+                        {{f}}
+                  </button>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+          </div>
+          <ng-template #loader>
+            <ion-spinner></ion-spinner>
+          </ng-template>
+        </div>
+        <ng-template #end>
+          <button ion-button block type="button" >
+            Reload
+          </button>
+        </ng-template>
+
+    </ion-card>
+</div>
+<p style="text-align: center; width: 100%;">{{ recentCard }}</p>
+</ion-content>

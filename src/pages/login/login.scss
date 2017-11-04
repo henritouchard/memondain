@@ -1,0 +1,22 @@
+page-login {
+  .toolbar-background{
+    background-color: #2b2f35 !important;
+  }
+  .toolbar-title{
+    color: #00d8ff !important;
+  }
+
+  .scroll-content {
+     background-image: url("../assets/girl.jpg");
+  }
+  .connectBtn{
+    margin-bottom: 0 auto;
+  }
+
+  .btn {
+    padding: 15px;
+  }
+  #facebookLogin{
+    border-style: hidden;
+  }
+}

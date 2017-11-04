@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Friends List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="buttonContainer">
+    <ion-row *ngFor="let c of cards">
+        <ion-col col-12 >
+              <ion-item>
+                <ion-avatar>
+                <img *ngIf="c.picture"[src]="c.picture.data.url">
+                <h2 class="textItem">{{c.first_name}} {{c.last_name}}</h2>
+              </ion-avatar>
+              </ion-item>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

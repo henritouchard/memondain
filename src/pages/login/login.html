@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Memondain</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="loginPage">
+  <ion-footer no-shadow class="btn">
+  <div *ngIf="isLoggedIn; else facebookLogin" class="connectBtn">
+    <div row>
+      <button ion-button block type="button" (click)="reload()">
+        Reload
+      </button>
+    </div>
+    <div row>
+      <button ion-button block type="button" (click)="logout()">
+        Déconnection<ion-icon name="logo-facebook"></ion-icon>
+      </button>
+    </div>
+</div>
+  <ng-template #facebookLogin>
+      <button ion-button block type="button" (click)="onConnect()">
+        Connection<ion-icon name="logo-facebook"></ion-icon>
+      </button>
+  </ng-template>
+</ion-footer>
+</ion-content>
